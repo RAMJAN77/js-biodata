@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  .tbl{
+      width: 80%;
+      margin: 8px auto;
+  }
+     form{
+       padding: 30px;
+       display: grid;
+       background-color: cadetblue;
+     }
+     label{
+       font-weight: bold;
+       color: white;
+     }
+     input{
+       margin-bottom: 15px !important;
+       border: none;
+       padding: 5px;
+       border-radius: 5px;
+     }
+     input[type="submit"]{
+       text-transform: uppercase;
+       font-weight: bold;
+       padding: 5px;
+       color: rgb(255, 255, 255);
+       background-color: rgb(243, 53, 142);
+     }
+     h1{
+       border-bottom: 3px solid #000;
+       border-color: rgb(243, 53, 142);
+     }
+</style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="tbl">
+ 
+          <form action="">
+            <h1 class="text-center text-white">BIODATA</h1>
+            
+            <label for="">Name </label>
+            <input type="text" name="" id="name" placeholder="Enter Your Nmae">
+            <label for="">Age</label>
+            <input type="number" name="" id="age" placeholder="Enter Your Age">
+            <label for="">Year</label>
+            <input type="number" name="" id="year" placeholder="Enter Your Year">
+             <input type="submit" name="" id="submit" value="Submit">
+          </form>
+
+         <table class="table text-center table-bordered mt-3">
+            <head>
+              <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>YEAR</th>
+              </tr>
+            </head>
+            <tbody id="body">
+
+            </tbody>
+         </table>
+
+      </div>
+      <script>
+          let body = document.getElementById('body');
+          let submit = document.getElementById('submit');
+          let name = document.getElementById('name');
+          let age = document.getElementById('age');
+          let year = document.getElementById('year');
+
+           submit.addEventListener("click", function(e){
+             e.preventDefault();
+             let row = document.createElement('tr');
+             let nam = document.createElement('td');
+             nam.innerHTML=name.value;
+             row.appendChild(nam);
+
+             let ag = document.createElement('td');
+             ag.innerHTML=age.value;
+             row.appendChild(ag);
+             
+             let yr = document.createElement('td');
+             yr.innerHTML=year.value;
+             row.appendChild(yr);
+
+             body.appendChild(row);
+            
+           })
+
+
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
